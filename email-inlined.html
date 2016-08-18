@@ -45,20 +45,18 @@ div[style*="margin: 16px 0"] {
 
 p {
   Margin: 0; }
+  p.h1 {
+    font-size: 21px;
+    font-weight: bold;
+    Margin-bottom: 18px; }
+  p.h2 {
+    font-size: 18px;
+    font-weight: bold;
+    Margin-bottom: 12px; }
 
 a {
   color: #ee6a56;
   text-decoration: underline; }
-
-.h1 {
-  font-size: 21px;
-  font-weight: bold;
-  Margin-bottom: 18px; }
-
-.h2 {
-  font-size: 18px;
-  font-weight: bold;
-  Margin-bottom: 12px; }
 
 .full-width-image img {
   width: 100%;
@@ -77,24 +75,29 @@ a {
 .two-column {
   text-align: center;
   font-size: 0; }
-
-.two-column .column {
-  width: 100%;
-  max-width: 300px;
-  display: inline-block;
-  vertical-align: top; }
-
-.two-column .contents {
-  font-size: 14px;
-  text-align: left; }
-
-.two-column img {
-  width: 100%;
-  max-width: 280px;
-  height: auto; }
-
-.two-column .text {
-  padding-top: 10px; }
+  .two-column .column {
+    width: 100%;
+    max-width: 300px;
+    display: inline-block;
+    vertical-align: top; }
+    @media screen and (max-width: 400px) {
+      .two-column .column {
+        max-width: 100% !important; } }
+    @media screen and (min-width: 401px) and (max-width: 620px) {
+      .two-column .column {
+        max-width: 50% !important; } }
+  .two-column .contents {
+    font-size: 14px;
+    text-align: left; }
+  .two-column img {
+    width: 100%;
+    max-width: 280px;
+    height: auto; }
+    @media screen and (max-width: 400px) {
+      .two-column img {
+        max-width: 100% !important; } }
+  .two-column .text {
+    padding-top: 10px; }
 
 /*Three column layout*/
 .three-column {
@@ -102,35 +105,45 @@ a {
   font-size: 0;
   padding-top: 10px;
   padding-bottom: 10px; }
+  .three-column .column {
+    width: 100%;
+    max-width: 200px;
+    display: inline-block;
+    vertical-align: top; }
+    @media screen and (max-width: 400px) {
+      .three-column .column {
+        max-width: 100% !important; } }
+    @media screen and (min-width: 401px) and (max-width: 620px) {
+      .three-column .column {
+        max-width: 33% !important; } }
+  .three-column img {
+    width: 100%;
+    max-width: 180px;
+    height: auto; }
+    @media screen and (max-width: 400px) {
+      .three-column img {
+        max-width: 50% !important; } }
+  .three-column .contents {
+    font-size: 14px;
+    text-align: center; }
+  .three-column .text {
+    padding-top: 10px; }
 
-.three-column .column {
-  width: 100%;
-  max-width: 200px;
-  display: inline-block;
-  vertical-align: top; }
-
-.three-column img {
-  width: 100%;
-  max-width: 180px;
-  height: auto; }
-
-.three-column .contents {
-  font-size: 14px;
-  text-align: center; }
-
-.three-column .text {
-  padding-top: 10px; }
-
-/* Left sidebar layout */
-.left-sidebar {
+/* sidebar main settings */
+.left-sidebar, .right-sidebar {
   text-align: center;
   font-size: 0; }
 
-.left-sidebar .column {
+.left-sidebar .column, .right-sidebar .column {
   width: 100%;
   display: inline-block;
   vertical-align: middle; }
 
+.left-sidebar .contents, .right-sidebar .contents {
+  font-size: 14px;
+  text-align: center; }
+
+/* Left sidebar layout */
 .left-sidebar .left {
   max-width: 100px; }
 
@@ -142,23 +155,10 @@ a {
   max-width: 80px;
   height: auto; }
 
-.left-sidebar .contents {
-  font-size: 14px;
-  text-align: center; }
-
 .left-sidebar a {
   color: #85ab70; }
 
 /* Right sidebar layout */
-.right-sidebar {
-  text-align: center;
-  font-size: 0; }
-
-.right-sidebar .column {
-  width: 100%;
-  display: inline-block;
-  vertical-align: middle; }
-
 .right-sidebar .left {
   max-width: 100px; }
 
@@ -170,28 +170,8 @@ a {
   max-width: 80px;
   height: auto; }
 
-.right-sidebar .contents {
-  font-size: 14px;
-  text-align: center; }
-
 .right-sidebar a {
   color: #70bbd9; }
-
-/*Media Queries*/
-@media screen and (max-width: 400px) {
-  .two-column .column,
-  .three-column .column {
-    max-width: 100% !important; }
-  .two-column img {
-    max-width: 100% !important; }
-  .three-column img {
-    max-width: 50% !important; } }
-
-@media screen and (min-width: 401px) and (max-width: 620px) {
-  .three-column .column {
-    max-width: 33% !important; }
-  .two-column .column {
-    max-width: 50% !important; } }
 
 /*# sourceMappingURL=main.css.map */
 </style>
