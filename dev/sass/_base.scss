@@ -2,8 +2,21 @@
 $email-width: 600px;
 $email-padding: 10px;
 $sidebar-width: 100px;
+
+/* width variables */
 $mobile: 400px;
+$tablet: 500px;
 $desktop: 620px;
+
+// media query mixin (courtesy of... )
+@mixin MQ($canvas) {
+  @if $canvas == mobile {
+    @media only screen and (max-width: $mobile) { @content; }
+  }
+  @else if $canvas == desktop {
+    @media only screen and (min-width: $mobile + 1px) and (max-width: $desktop) { @content; }
+  }
+}
 
 body {
 	margin: 0 !important;
@@ -93,11 +106,11 @@ a {
 		display: inline-block;
 		vertical-align: top;
 		
-		@media screen and (max-width: $mobile) {
+		@include MQ(mobile) {
 			max-width: 100% !important;
 		}
 		
-		@media screen and (min-width: 401px) and (max-width: 620px) {
+		@include MQ(desktop) {
 			max-width: 50% !important;
 		}
 	}
@@ -112,7 +125,7 @@ a {
 		max-width: $col-width - ($email-padding * 2);
 		height: auto;
 		
-		@media screen and (max-width: $mobile) {		
+		@include MQ(mobile) {		
 			max-width: 100% !important;
 		}
 
@@ -137,11 +150,11 @@ a {
 		display: inline-block;
 		vertical-align: top;
 		
-		@media screen and (max-width: $mobile) {
+		@include MQ(mobile) {
 			max-width: 100% !important;
 		}
 		
-		@media screen and (min-width: $mobile + 1px) and (max-width: $desktop) {
+		@include MQ(desktop) {
 			max-width: 33% !important;
 		}
 	}
@@ -151,7 +164,7 @@ a {
 		max-width: $col-width - ($email-padding * 2);
 		height: auto;
 
-		@media screen and (max-width: $mobile) {
+		@include MQ(mobile) {
 			max-width: 50% !important;
 		}
 	}

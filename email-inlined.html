@@ -3,6 +3,7 @@
 <head>
 	<style>
 /* Basics */
+/* width variables */
 body {
   margin: 0 !important;
   padding: 0;
@@ -80,10 +81,10 @@ a {
     max-width: 300px;
     display: inline-block;
     vertical-align: top; }
-    @media screen and (max-width: 400px) {
+    @media only screen and (max-width: 400px) {
       .two-column .column {
         max-width: 100% !important; } }
-    @media screen and (min-width: 401px) and (max-width: 620px) {
+    @media only screen and (min-width: 401px) and (max-width: 620px) {
       .two-column .column {
         max-width: 50% !important; } }
   .two-column .contents {
@@ -93,7 +94,7 @@ a {
     width: 100%;
     max-width: 280px;
     height: auto; }
-    @media screen and (max-width: 400px) {
+    @media only screen and (max-width: 400px) {
       .two-column img {
         max-width: 100% !important; } }
   .two-column .text {
@@ -110,17 +111,17 @@ a {
     max-width: 200px;
     display: inline-block;
     vertical-align: top; }
-    @media screen and (max-width: 400px) {
+    @media only screen and (max-width: 400px) {
       .three-column .column {
         max-width: 100% !important; } }
-    @media screen and (min-width: 401px) and (max-width: 620px) {
+    @media only screen and (min-width: 401px) and (max-width: 620px) {
       .three-column .column {
         max-width: 33% !important; } }
   .three-column img {
     width: 100%;
     max-width: 180px;
     height: auto; }
-    @media screen and (max-width: 400px) {
+    @media only screen and (max-width: 400px) {
       .three-column img {
         max-width: 50% !important; } }
   .three-column .contents {
