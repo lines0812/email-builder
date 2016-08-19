@@ -8,7 +8,7 @@ $mobile: 400px;
 $tablet: 500px;
 $desktop: 620px;
 
-// media query mixin (courtesy of... )
+// media query mixin (courtesy of Ben Frain: https://gist.github.com/benfrain/2510308)
 @mixin MQ($canvas) {
   @if $canvas == mobile {
     @media only screen and (max-width: $mobile) { @content; }
