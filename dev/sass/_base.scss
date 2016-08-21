@@ -1,7 +1,6 @@
 /* Basics */
 $email-width: 600px;
 $email-padding: 10px;
-$sidebar-width: 100px;
 
 /* width variables */
 $mobile: 400px;
@@ -181,6 +180,8 @@ a {
 
 /* sidebar main settings */
 
+$sidebar-width: 100px;
+
 %sidebar {
 	text-align: center;
 	font-size: 0;
@@ -197,6 +198,20 @@ a {
 	text-align: center;
 }
 
+@mixin sidebar-col-left {
+	max-width: $sidebar-width;
+}
+
+@mixin sidebar-col-right {
+	max-width: $email-width - $sidebar-width;
+}
+
+@mixin sidebar-img {
+	width: 100%;
+	max-width: $sidebar-width - ($email-padding * 2);
+	height: auto;
+}
+
 /* Left sidebar layout */
 
 .left-sidebar {
@@ -207,17 +222,15 @@ a {
 	}
 	
 	.left {
-		max-width: 100px;
+		@include sidebar-col-left;
 	}
 	
 	.right {
-		max-width: 500px;
+		@include sidebar-col-right;
 	}
 	
 	.img {
-		width: 100%;
-		max-width: 80px;
-		height: auto;
+		@include sidebar-img;
 	}
 	
 	.contents {
@@ -238,21 +251,19 @@ a {
 	}
 	
 	.left {
-		max-width: 100px;
+		@include sidebar-col-left;
 	}
 	
 	.right {
-		max-width: 500px;
+		@include sidebar-col-right;
 	}
 	
 	.img {
-		width: 100%;
-		max-width: 80px;
-		height: auto;
+		@include sidebar-img;
 	}
 	
 	.contents {
-			@extend %sidebar-contents;
+		@extend %sidebar-contents;
 	}
 	
 	a {
